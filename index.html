@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div id="header">
+            <h1>Deep Sea Prisoner</h1>
+        </div>
+    </header>
+
+    <div class="image1"></div>
+
+
+    <div class="flexbox fade-in">
+        <div class="image2"></div>
+        <div class="content">
+            <h2>The Beginning</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae est aspernatur, ratione atque reprehenderit nemo amet. Illum aliquam assumenda natus molestiae iste quam non ad! Rerum saepe vitae sunt expedita. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni sunt alias quae dolores qui omnis unde distinctio autem nulla earum minima, porro voluptate, optio iste temporibus explicabo totam adipisci possimus.</p>
+        </div>
+    </div>
+
+    <div class="fade-in">
+        <div class="content2">
+            <h2>The Game</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident dolorem ex tempore enim. Iste quas recusandae asperiores animi natus repudiandae, maiores facere dolores ullam. Veritatis pariatur quia reprehenderit nam, ex! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae laborum voluptates mollitia sunt quasi necessitatibus, eveniet. Ut, commodi sunt rerum perferendis et ducimus pariatur, ea fugiat, quaerat numquam enim non.</p>
+        </div>
+        <div class="image3"></div>
+    </div>
+
+    <div class="flexbox fade-in">
+        <div class="content">
+            <h2>The Choice</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, tempore. Sapiente dolor, porro ad officiis vel modi nostrum, aliquid numquam eaque, voluptates similique ullam aperiam officia consequuntur iure excepturi assumenda. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, incidunt inventore eos ipsa totam perferendis dolore fugit dolores maiores. Cumque impedit enim odit doloremque saepe aliquam quidem odio consequuntur. Ad?</p>
+        </div>
+        <div class="image4"></div>
+    </div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > $(window).height() - 20) {
+                    $("#header").css({
+                        "background": "#0c0c27"
+                    });
+                } else {
+                    $("#header").css({
+                        "background": "rgba(0,0,0,0.3)"
+                    });
+                }
+            })
+            $(window).scroll(function() {
+                $('.fade-in').each(function(i) {
+
+                    var bottomObject = $(this).position().top + $(this).outerHeight();
+                    var bottomWindow = $(window).scrollTop() + $(window).height();
+
+                    if (bottomWindow > bottomObject - 200) {
+                        $(this).animate({
+                            'opacity': '1'
+                        }, 1000);
+                    }
+
+                })
+            })
+        })
+
+    </script>
+</body>
+
+</html>
